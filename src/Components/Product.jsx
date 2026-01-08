@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import ProductQR from "./ProductQR";
 
 const API = "http://127.0.0.1:8000/api/apiProducts";
 
@@ -33,6 +34,10 @@ function Product() {
         <li>Category: {product.category}</li>
         <li>Date: {product.date}</li>
       </ul>
+
+      <ProductQR product={product} />
+
+      <br />
 
       <Link to="/products">Back</Link>
     </div>

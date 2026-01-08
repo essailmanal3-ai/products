@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ProductPDF from "./ProductPDF";
+import Geo from "./Geo";
 
 const API = "http://127.0.0.1:8000/api/apiProducts";
 
@@ -51,6 +53,7 @@ function Products() {
             <th>Show</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>PDF</th>
           </tr>
         </thead>
 
@@ -80,10 +83,15 @@ function Products() {
                   <img src="delete.png" width="30" alt="delete" />
                 </Link>
               </td>
+                <td>
+                <ProductPDF product={p} />
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <Geo />
+
     </div>
   );
 }
